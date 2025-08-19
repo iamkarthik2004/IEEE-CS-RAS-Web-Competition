@@ -690,6 +690,21 @@ body.dark-mode .footer-column ul li a:hover {
   color: #60a5fa;
 }
 
+/* Dark mode fixes for Achievements */
+.dark-mode .achievement-card {
+  background: #1e293b;   /* dark card background */
+  color: #ffffff;        /* fallback text color */
+}
+
+.dark-mode .achievement-card h3 {
+  color: #f9fafb;        /* light heading */
+}
+
+.dark-mode .achievement-card p {
+  color: #d1d5db;        /* lighter gray for readability */
+}
+
+
 /* Logo Swap Dark Mode */
 body.dark-mode #cs-logo { content: url("images/cslogo-white.png"); }
 body.dark-mode #ras-logo { content: url("images/raslogo-white.png"); }
@@ -717,3 +732,4 @@ body.dark-mode #footer-logo { content: url("images/ieee-logo-white.png"); }
     opacity: 0;
   }
 }
+
