@@ -3,5 +3,5 @@
 Hosted Link: https://ieee-cs-ras-web-design-karthik-deon.vercel.app/
 
 Developers: 
-Karthik Krishnan
+Karthik Krishnan and
 Deon George
