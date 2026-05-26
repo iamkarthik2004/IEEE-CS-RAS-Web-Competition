@@ -185,6 +185,44 @@ button {
   margin: 0 1rem 1.5rem;
   color: #4b5563;
 }
+/* ========= Achievements ========= */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.achievement-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  padding-bottom: 1rem;
+}
+
+.achievement-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.achievement-card h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 1rem;
+}
+
+.achievement-card p {
+  margin: 0 1rem 1rem;
+  color: #4b5563;
+}
+
+.achievement-card:hover {
+  transform: translateY(-6px);
+}
+
 
 /* ========= Team ========= */
 #team {
@@ -480,100 +518,218 @@ button {
   to { transform: translateX(-50px) translateY(-50px); }
 }
 
-/* ===== Parallax helpers (add-only) ===== */
-.parallax-item {
-  will-change: transform;
-}
+/* ==================== RESPONSIVE DESIGN ==================== */
 
-.parallax-bg {
-  will-change: transform, background-position;
-}
+/* ===== Tablets (<= 1024px) ===== */
+@media (max-width: 1024px) {
+  .container {
+    padding: 2rem 1rem;
+  }
 
-/* reduce motion respect */
-@media (prefers-reduced-motion: reduce) {
-  .parallax-item,
-  .parallax-bg {
-    transform: none !important;
-    background-position: center !important;
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .about-card,
+  .event-card,
+  .team-card {
+    padding: 1.5rem;
+  }
+
+  .event-card img {
+    height: 180px;
   }
 }
 
-/* ==================== Responsive Design ==================== */
-/* ----- Small screens (max-width: 768px) ----- */
+/* ===== Mobile Large (<= 768px) ===== */
 @media (max-width: 768px) {
-  /* Hero section */
+  /* Hero Section */
   .hero h1 {
-    font-size: 2rem;       /* reduce font size */
-    line-height: 1.3;
+    font-size: 2rem;
   }
+
   .hero p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .hero-buttons a {
+    width: 90%;
+    text-align: center;
     font-size: 1rem;
   }
-  .hero a {
-    padding: 0.7rem 1.5rem;
-    font-size: 0.9rem;
-  }
 
-  /* About grid */
+  /* About Grid */
   .about-grid {
-    grid-template-columns: 1fr;   /* stack in one column */
+    grid-template-columns: 1fr;
   }
 
-  /* Events grid */
+  /* Events */
   .events-grid {
-    grid-template-columns: 1fr;   /* stack cards vertically */
+    grid-template-columns: 1fr;
   }
 
-  /* Team grid */
+  .event-card img {
+    height: 160px;
+  }
+
+  /* Team */
   .team-grid {
-    grid-template-columns: 1fr 1fr;  /* 2 members per row */
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
   }
 
-  /* Contact grid */
+  /* Contact */
   .contact-grid {
-    grid-template-columns: 1fr;   /* map & form stack */
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
+
   .map iframe {
-    height: 250px;                /* reduce map height */
+    height: 250px;
   }
 
   /* Footer */
   .footer-top {
-    grid-template-columns: 1fr;   /* stack all footer columns */
-    text-align: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
   }
+
   .footer-logo img {
-    margin: auto;
+    width: 120px;
   }
 }
 
-
-/* ----- Extra small screens (max-width: 480px) ----- */
+/* ===== Mobile Small (<= 480px) ===== */
 @media (max-width: 480px) {
-  /* Hero section */
+  /* Hero */
   .hero h1 {
     font-size: 1.6rem;
   }
   .hero p {
+    font-size: 0.8rem;
+  }
+  .hero-buttons a {
     font-size: 0.9rem;
-  }
-  .hero-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
+    padding: 0.7rem 1.2rem;
   }
 
-  /* Team grid */
+  /* Team */
   .team-grid {
-    grid-template-columns: 1fr;   /* 1 member per row */
+    grid-template-columns: 1fr;
   }
 
-  /* Dock nav */
-  .nav-dock {
-    bottom: 0.5rem;
+  /* Footer */
+  .footer-top {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
-  .nav-dock .icon {
-    font-size: 1.2rem;
-    padding: 0.6rem;
+  .footer-column h4 {
+    margin-top: 1rem;
   }
 }
+
+/* ========= Theme Toggle ========= */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1100;
+}
+
+#theme-btn {
+  background: #2563eb;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+#theme-btn:hover {
+  background: #1e40af;
+  transform: scale(1.1);
+}
+
+/* ========= Dark Mode ========= */
+body.dark-mode {
+  background-color: #111827; /* dark gray */
+  color: #f9fafb;           /* light text */
+}
+
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode a,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4 {
+  color: #f9fafb !important;
+}
+
+body.dark-mode .about-card,
+body.dark-mode .event-card,
+body.dark-mode .team-card,
+body.dark-mode .contact-section,
+body.dark-mode .footer {
+  background: #1f2937;
+  color: #f9fafb;
+}
+
+body.dark-mode .footer-column ul li a:hover {
+  color: #60a5fa;
+}
+
+/* Dark mode fixes for Achievements */
+.dark-mode .achievement-card {
+  background: #1e293b;   /* dark card background */
+  color: #ffffff;        /* fallback text color */
+}
+
+.dark-mode .achievement-card h3 {
+  color: #f9fafb;        /* light heading */
+}
+
+.dark-mode .achievement-card p {
+  color: #d1d5db;        /* lighter gray for readability */
+}
+
+
+/* Logo Swap Dark Mode */
+body.dark-mode #cs-logo { content: url("images/cslogo-white.png"); }
+body.dark-mode #ras-logo { content: url("images/raslogo-white.png"); }
+body.dark-mode #footer-logo { content: url("images/ieee-logo-white.png"); }
+
+.wayfire {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  pointer-events: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: wayfire-ripple 0.6s ease-out forwards;
+  opacity: 0.7;
+  z-index: 10;
+}
+
+@keyframes wayfire-ripple {
+  from {
+    transform: translate(-50%, -50%) scale(0.2);
+    opacity: 0.8;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(2.5);
+    opacity: 0;
+  }
+}
+

@@ -1,6 +1,6 @@
 # IEEE-CS-RAS-Web-Competition
 
-Hosted Link: https://ieee-cs-ras-web-design-karthik-deon.vercel.app/
+https://ieee-cs-ras-web-competition-technov.vercel.app/
 
 Developers: 
 Karthik Krishnan and

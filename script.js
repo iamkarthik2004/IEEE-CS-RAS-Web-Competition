@@ -51,10 +51,11 @@ function createWayfireEffect(e) {
   }, 600); // remove after animation
 }
 
-// Attach Wayfire effect to all buttons, hero buttons, and nav icons
-document.querySelectorAll('button, .btn, .nav-dock .icon').forEach(btn => {
-  btn.addEventListener('click', createWayfireEffect);
+// Attach Wayfire effect to all clickable elements
+document.querySelectorAll('button, .btn, .nav-dock .icon, a').forEach(el => {
+  el.addEventListener('click', createWayfireEffect);
 });
+
 
 
 /* ===== Parallax (add-only) ===== */
@@ -124,8 +125,26 @@ document.querySelectorAll('button, .btn, .nav-dock .icon').forEach(btn => {
     });
   }
 
-  // run once + bind
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll);
 })();
+
+// ========= Dark/Light Mode Toggle =========
+const themeBtn = document.getElementById("theme-btn");
+const csLogo = document.getElementById("cs-logo");
+const rasLogo = document.getElementById("ras-logo");
+const footerLogo = document.getElementById("footer-logo");
+
+themeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+
+  if (document.body.classList.contains("dark-mode")) {
+    themeBtn.textContent = "☀️";
+    csLogo.src = "images/cslogo-white.png";
+    rasLogo.src = "images/raslogo-white.png";
+    footerLogo.src = "images/ieee-logo-white.png";
+  } else {
+    themeBtn.textContent = "🌙";
+    csLogo.src = "images/cslogo.png";
+    rasLogo.src = "images/raslogo.png";
+    footerLogo.src = "images/ieee-logo.png";
+  }
+});

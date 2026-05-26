@@ -29,6 +29,11 @@
   </div>
 </header>
 
+  <!-- Theme Toggle -->
+<div class="theme-toggle">
+  <button id="theme-btn">🌙</button>
+</div>
+
   <!-- Main Content -->
   <main class="container">
 
@@ -38,8 +43,8 @@
 
       <!-- Logos Row -->
       <div class="society-logos">
-        <img src="images/cslogo.png" alt="IEEE CS Logo">
-        <img src="images/raslogo.png" alt="IEEE RAS Logo">
+        <img id="cs-logo" src="images/cslogo.png" alt="IEEE CS Logo">
+        <img id="ras-logo" src="images/raslogo.png" alt="IEEE RAS Logo">
       </div>
 
       <div class="about-grid">
@@ -84,6 +89,29 @@
       </div>
     </section>
 
+        <!-- Achievements -->
+    <section id="achievements">
+      <h2 class="section-title glitter">Our Achievements</h2>
+      <div class="achievements-grid">
+        <div class="achievement-card">
+          <img src="images/ach1.jpeg" alt="Achievement 1">
+          <h3>Best Student Branch Award 2024</h3>
+          <p>Recognized by IEEE Kerala Section for outstanding contributions in technical and community activities.</p>
+        </div>
+        <div class="achievement-card">
+          <img src="images/ach2.jpeg" alt="Achievement 2">
+          <h3>National Robotics Winner</h3>
+          <p>Our RAS team secured 1st place at the All-India Robotics Challenge 2025.</p>
+        </div>
+        <div class="achievement-card">
+          <img src="images/ach3.jpeg" alt="Achievement 3">
+          <h3>AI Innovation Grant</h3>
+          <p>Received funding for a healthcare AI project, supporting innovation in medical technology.</p>
+        </div>
+      </div>
+    </section>
+
+
     <!-- Team -->
     <section id="team">
       <h2 class="section-title glitter">Meet the Team</h2>
@@ -119,22 +147,22 @@
         <!-- Map -->
         <div class="map">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3565.486619181682!2d76.55441247501932!3d9.064586290998207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06047ba58e1ba5%3A0x34bf71aaecc5a798!2sCollege%20of%20Engineering%20Karunagappally!5e1!3m2!1sen!2sin!4v1755452397051!5m2!1sen!2sin" 
-            width="100%" 
-            height="350" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.118771079982!2d76.55435251533227!3d9.064626193488055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06047ba58e1ba5%3A0x34bf71aaecc5a798!2sCollege%20of%20Engineering%20Karunagappally!5e0!3m2!1sen!2sin!4v1692264200000!5m2!1sen!2sin" 
+  width="100%" 
+  height="350" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
         </div>
 
         <!-- Contact Info -->
         <div class="contact-info">
-          <p><strong>IEEE Student Branch College of Engineering Karunagappally Thodiyoor P.O, Karunagappally,
-                    Kollam Dist, Kerala, India – 690523</strong></p>
+          <p><strong>IEEE Student Branch College of Engineering Karunagappally, Kerala, India – 690523</strong></p>
 
-          <p>📧 <a href="mailto:contact@ieee-csras.org">ieeesbcek2000@gmail.com</a></p>
+          <p>📧 <a href="mailto:ieeesbcek2000@gmail.com">ieeesbcek2000@gmail.com</a></p>
           <p>📞 +91 76543 21087</p>
 
           <!-- Small form -->
@@ -151,50 +179,28 @@
 
   <!-- Dock Navigation -->
   <nav class="nav-dock glassmorphism">
-    <div class="nav-item">
-      <div class="nav-tooltip">Home</div>
-      <a href="#home"><div class="icon">🏠</div></a>
-    </div>
-    <div class="nav-item">
-      <div class="nav-tooltip">About</div>
-      <a href="#about"><div class="icon">ℹ️</div></a>
-    </div>
-    <div class="nav-item">
-      <div class="nav-tooltip">Events</div>
-      <a href="#events"><div class="icon">📅</div></a>
-    </div>
-    <div class="nav-item">
-      <div class="nav-tooltip">Team</div>
-      <a href="#team"><div class="icon">👥</div></a>
-    </div>
-    <div class="nav-item">
-      <div class="nav-tooltip">Contact</div>
-      <a href="#contact"><div class="icon">✉️</div></a>
-    </div>
+    <div class="nav-item"><div class="nav-tooltip">Home</div><a href="#home"><div class="icon">🏠</div></a></div>
+    <div class="nav-item"><div class="nav-tooltip">About</div><a href="#about"><div class="icon">ℹ️</div></a></div>
+    <div class="nav-item"><div class="nav-tooltip">Events</div><a href="#events"><div class="icon">📅</div></a></div>
+    <div class="nav-item"><div class="nav-tooltip">Achievements</div><a href="#achievements"><div class="icon">🏆</div></a></div>
+    <div class="nav-item"><div class="nav-tooltip">Team</div><a href="#team"><div class="icon">👥</div></a></div>
+    <div class="nav-item"><div class="nav-tooltip">Contact</div><a href="#contact"><div class="icon">✉️</div></a></div>
   </nav>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-top">
-      <!-- Left: Logo -->
       <div class="footer-logo">
-        <img src="images/ieee-logo.png" alt="IEEE Logo">
+        <img id="footer-logo" src="images/ieee-logo.png" alt="IEEE Logo">
         <p>Student Branch CEK Karunagappally</p>
       </div>
-
-      <!-- Middle: Links -->
       <div class="footer-column">
         <h4>Links</h4>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#events">Events</a></li>
-          <li><a href="#team">Execcom</a></li>
-          <li><a href="#blog">Blog</a></li>
+          <li><a href="#home">Home</a></li><li><a href="#about">About</a></li>
+          <li><a href="#events">Events</a></li><li><a href="#team">Execcom</a></li><li><a href="#blog">Blog</a></li>
         </ul>
       </div>
-
-      <!-- Middle: Societies -->
       <div class="footer-column">
         <h4>Societies</h4>
         <ul>
@@ -206,8 +212,6 @@
           <li>IEEE Communications Society</li>
         </ul>
       </div>
-
-      <!-- Right: Resources -->
       <div class="footer-column">
         <h4>IEEE Resources</h4>
         <ul>
@@ -219,16 +223,12 @@
         </ul>
       </div>
     </div>
-
-    <!-- Social -->
     <div class="footer-social">
       <a href="#"><i class="fab fa-facebook-f"></i></a>
       <a href="#"><i class="fab fa-instagram"></i></a>
       <a href="#"><i class="fab fa-linkedin-in"></i></a>
       <a href="#"><i class="fab fa-youtube"></i></a>
     </div>
-
-    <!-- Bottom Note -->
     <div class="footer-bottom">
       <p>Made with 💙 by IEEE SB CEK</p>
     </div>
