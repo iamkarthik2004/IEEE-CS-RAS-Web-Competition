@@ -3,5 +3,5 @@
 https://ieee-cs-ras-web-competition-technov.vercel.app/
 
 Developers: 
-Karthik Krishnan
+Karthik Krishnan and
 Deon George
